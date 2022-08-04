@@ -1,0 +1,45 @@
+{
+  "Actions": [
+    {
+      "Icon": "actionDefaultImage",
+      "Name": "Number Input",
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "32",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        }
+      ],
+      "Tooltip": "This action enters the number into the distance input",
+      "UUID": "net.nikjohnson.hll-calculator.actionNumberInput"
+    }
+  ],
+  "Profiles": [
+  ],
+  "SDKVersion": 2,
+  "Author": "Nik Johnson",
+  "Category": "HLL Calculator",
+  "CodePath": "plugin/index.html",
+  "Description": "Hell Let Loose artillery distance calculator",
+  "Name": "Hell Let Loose Artillery Calculator",
+  "Icon": "pluginIcon",
+  "URL": "https://www.elgato.com/gaming/stream-deck",
+  "PropertyInspectorPath": "pi/index.html",
+  "Version": "0.1",
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+    }
+}
