@@ -25,7 +25,6 @@ function initializePlugin(imageCache) {
 
   // Register all event handlers
   window.$SD.on('willAppear', function(event) {
-    console.log("willAppear", event);
     // If this is a new object, create it and cache it.
     if (!contexts.hasOwnProperty(event.context)) {
       switch (event.action) {

@@ -5,9 +5,9 @@
       "Name": "Number Input",
       "States": [
         {
-          "Image": "actionDefaultImage",
+          "Image": "plugin/images/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "18",
+          "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
@@ -20,9 +20,9 @@
       "Name": "Input Buffer",
       "States": [
         {
-          "Image": "actionDefaultImage",
+          "Image": "plugin/images/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "18",
+          "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
@@ -35,9 +35,9 @@
       "Name": "Computed Value",
       "States": [
         {
-          "Image": "actionDefaultImage",
+          "Image": "plugin/images/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "18",
+          "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
@@ -50,9 +50,24 @@
       "Name": "Mode Change",
       "States": [
         {
-          "Image": "actionDefaultImage",
+          "Image": "plugin/images/actionBlack",
+          "Title": "American",
           "TitleAlignment": "middle",
-          "FontSize": "18",
+          "FontSize": "10",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        },{
+          "Image": "plugin/images/actionBlack",
+          "Title": "German",
+          "TitleAlignment": "middle",
+          "FontSize": "10",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        },{
+          "Image": "plugin/images/actionBlack",
+          "Title": "Russian",
+          "TitleAlignment": "middle",
+          "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }

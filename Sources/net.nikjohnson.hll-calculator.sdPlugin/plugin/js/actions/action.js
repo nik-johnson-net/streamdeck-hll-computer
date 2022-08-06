@@ -2,7 +2,7 @@ class Action {
     constructor(context, settings) {
         this.context = context;
         this.settings = {
-            ...defaultSettings(),
+            ...this.defaultSettings(),
             ...settings
         };
     }
@@ -16,12 +16,12 @@ class Action {
     onKeyDown(_) {}
     
     onWillAppear(payload) {
-        settings = payload.settings;
+        this.settings = payload.settings;
     }
 
     onWillDisappear(_) {}
 
     onDidReceiveSettings(payload) {
-        settings = payload.settings;
+        this.settings = payload.settings;
     }
 } 

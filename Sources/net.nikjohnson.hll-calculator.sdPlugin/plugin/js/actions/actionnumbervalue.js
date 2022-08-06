@@ -11,46 +11,40 @@ const _valueToImage = {
     9: 'nine.svg'
 }
 
-function ActionNumberValue(initContext, initSettings, computer, imageCache) {
-    let context = initContext;
-    let settings = defaultSettings(initSettings);
-
-    this.context = function() {
-        return context;
+class ActionNumberValue extends Action {
+    constructor(context, settings, computer, imageCache) {
+        super(context, settings)
+        this.computer = computer;
+        this.imageCache = imageCache;
     }
 
-    this.settings = function() {
-        return settings;
+    onKeyUp(_payload) {
+        // Send this button's value to the computer input. If the computer refuses the input,
+        // show an alert.
+        if (!computer.enterDigit(settings.value)) {
+            window.$SD.api.showAlert(this.context);
+        };
     }
 
-    this.onKeyUp = function(_payload) {
-        computer.enterDigit(settings.value);
+    onWillAppear(payload) {
+        super.onWillAppear(payload);
+        this.setIcon();
     }
 
-    this.onKeyDown = function(_payload) {}
-
-    this.onWillAppear = function(payload) {
-        settings = payload.settings;
-        setIcon();
+    onDidReceiveSettings(payload) {
+        super.onDidReceiveSettings(payload);
+        this.setIcon();
     }
 
-    this.onWillDisappear = function(payload) {}
-
-    this.onDidReceiveSettings = function(payload) {
-        settings = payload.settings;
-        setIcon();
+    setIcon() {
+        const imageName = _valueToImage[this.settings.value];
+        const image = this.imageCache[imageName];
+        window.$SD.api.setImage(this.context, image);
     }
 
-    function setIcon() {
-        const imageName = _valueToImage[settings.value];
-        const image = imageCache[imageName];
-        window.$SD.api.setImage(context, image);
-    }
-
-    function defaultSettings(initSettings) {
+    defaultSettings() {
         return {
-            value: 0,
-            ...initSettings
-        }
+            value: 0
+        };
     }
 }
