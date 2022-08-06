@@ -1,3 +1,3 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="-50 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<path fill="#FFF" transform="scale(0.1, -0.1) translate(0, -1638)" d="M405 1080q-42 -56 -58 -147q-17 -97 -17 -224q0 -126 17 -222q17 -95 58 -148q41 -54 111 -54q193 0 193 424t-193 424q-70 0 -111 -53zM772 1384q104 -67 162 -177q57 -109 81 -237q23 -130 23 -261q0 -179 -45 -347q-45 -169 -161 -282q-118 -113 -316 -113 q-148 0 -251 68q-102 67 -161 180q-58 113 -81 237q-23 127 -23 257t23 259q23 125 81 237q59 113 161 180q101 67 251 67q152 0 256 -68z" />
 </svg>
