@@ -15,8 +15,14 @@ class Computer {
     }
 
     setMode(mode) {
-        // TODO: Sanitize
+        if (!Computer.acceptedModes.includes(mode)) {
+            console.warn('Invalid mode given to Computer.setMode:', mode);
+            return false;
+        }
+        console.log('Setting computer mode to', mode);
         this.computerMode = mode;
+        this.reset();
+        return true;
     }
 
     enterDigit(value) {
@@ -31,8 +37,8 @@ class Computer {
 
     enter() {
         const computation = {
-            meters: currentInput,
-            mils: this._computeMeterToMils(currentInput)
+            meters: this.currentInput,
+            mils: this._computeMeterToMils(this.currentInput)
         };
 
         this._pushToBuffer(computation);
@@ -40,10 +46,16 @@ class Computer {
         this._updateComputedValueActions();
     }
 
+    reset() {
+        this.clear();
+        this.computerHistory = [];
+        this._updateComputedValueActions();
+    }
+
     clear() {
         this.currentInput = 0;
         this.currentDigits = 0;
-        _updateInputBufferActions();
+        this._updateInputBufferActions();
     }
 
     deregisterInputBufferAction(action) {
@@ -65,13 +77,13 @@ class Computer {
     }
 
     _updateInputBufferActions() {
-        for (const action of this.inputBufferActions) {
+        for (const action of Object.values(this.inputBufferActions)) {
             action.displayValue(this.currentInput);
         }
     }
 
     _updateComputedValueActions() {
-        for (const action of this.computedValueActions) {
+        for (const action of Object.values(this.computedValueActions)) {
             this._updateComputedValueAction(action);
         }
     }
@@ -80,6 +92,7 @@ class Computer {
         const historyLevel = action.settings.historyLevel;
         // historyLevel is 1-indexed. Arrays are 0-indexed.
         const pastComputation = this.computerHistory[historyLevel-1];
+        console.log('Updating Computed Value action', action.context, 'with history level', historyLevel, 'to past computation', pastComputation);
         if (pastComputation === undefined) {
             action.displayComputation('', '');
         } else {
@@ -103,7 +116,8 @@ class Computer {
                 b = 1141.375;
                 break;
         }
-        return (m*x) + b;
+        const result = (m*meters) + b;
+        return Math.round(result);
     }
 
     _pushToBuffer(computation) {

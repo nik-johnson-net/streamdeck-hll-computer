@@ -20,6 +20,7 @@ class ActionComputedValue extends Action {
     }
 
     displayComputation(meters, mils) {
-        window.$SD.api.setTitle(this.context, '' + meters + '\n' + mils);
+        console.log('Context', this.context, 'displaying computation', meters, mils);
+        window.$SD.api.setTitle(this.context, 'Meters:\n' + meters + '\nMils:\n' + mils);
     }
 }

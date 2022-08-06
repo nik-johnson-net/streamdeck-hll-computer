@@ -37,7 +37,7 @@
         {
           "Image": "plugin/images/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "10",
+          "FontSize": "12",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }

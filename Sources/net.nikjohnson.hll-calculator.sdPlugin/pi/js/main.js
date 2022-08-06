@@ -1,4 +1,4 @@
-function renderActionTemplate(name, settings) {
+function renderActionTemplate(name, selectedOption) {
   const elem = document.getElementById("piwrapper");
   const template = document.getElementById("template-" + name);
   
@@ -11,7 +11,7 @@ function renderActionTemplate(name, settings) {
       continue;
     }
 
-    if (parseInt(elem.getAttribute('value')) == parseInt(settings.value)) {
+    if (parseInt(elem.getAttribute('value')) == parseInt(selectedOption)) {
       elem.setAttribute('selected', '');
     }
   }
@@ -23,11 +23,21 @@ function renderActionTemplate(name, settings) {
 var actions = {
   "net.nikjohnson.hll-calculator.actionnumberinput": {
     register(uuid, settings) {
-      renderActionTemplate("actionnumberinput", settings);
+      renderActionTemplate("actionnumberinput", settings.value);
 
       const actionnumberinputValue = document.getElementById("actionnumberinput-value");
       actionnumberinputValue.onchange = function(evt) {
         window.$SD.api.setSettings(uuid, {value: parseInt(evt.target.value)});
+      };
+    }
+  },
+  "net.nikjohnson.hll-calculator.actioncomputedvalue": {
+    register(uuid, settings) {
+      renderActionTemplate("actioncomputedvalue", settings.historyLevel);
+
+      const actioncomputedvalueHistoryLevel = document.getElementById("actioncomputedvalue-historylevel");
+      actioncomputedvalueHistoryLevel.onchange = function(evt) {
+        window.$SD.api.setSettings(uuid, {historyLevel: parseInt(evt.target.value)});
       };
     }
   }

@@ -21,7 +21,7 @@ class ActionNumberValue extends Action {
     onKeyUp(_payload) {
         // Send this button's value to the computer input. If the computer refuses the input,
         // show an alert.
-        if (!computer.enterDigit(settings.value)) {
+        if (!this.computer.enterDigit(this.settings.value)) {
             window.$SD.api.showAlert(this.context);
         };
     }

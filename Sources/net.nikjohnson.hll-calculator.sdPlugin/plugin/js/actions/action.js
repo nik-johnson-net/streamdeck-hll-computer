@@ -16,12 +16,18 @@ class Action {
     onKeyDown(_) {}
     
     onWillAppear(payload) {
-        this.settings = payload.settings;
+        this.settings = {
+            ...this.defaultSettings(),
+            ...payload.settings
+        };
     }
 
     onWillDisappear(_) {}
 
     onDidReceiveSettings(payload) {
-        this.settings = payload.settings;
+        this.settings = {
+            ...this.defaultSettings(),
+            ...payload.settings
+        };
     }
-} 
+}
