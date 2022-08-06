@@ -11,9 +11,9 @@ const _valueToImage = {
     9: 'nine.svg'
 }
 
-function ActionNumberValue(initContext, initSettings, computer, imageCache) {
+function ActionComputedValue(initContext, initSettings, imageCache) {
     let context = initContext;
-    let settings = defaultSettings(initSettings);
+    let settings = initSettings;
 
     this.context = function() {
         return context;
@@ -23,11 +23,11 @@ function ActionNumberValue(initContext, initSettings, computer, imageCache) {
         return settings;
     }
 
-    this.onKeyUp = function(_payload) {
-        computer.enterDigit(settings.value);
+    this.onKeyUp = function(payload) {
+        payload.settings
     }
 
-    this.onKeyDown = function(_payload) {}
+    this.onKeyDown = function(payload) {}
 
     this.onWillAppear = function(payload) {
         settings = payload.settings;
@@ -45,12 +45,5 @@ function ActionNumberValue(initContext, initSettings, computer, imageCache) {
         const imageName = _valueToImage[settings.value];
         const image = imageCache[imageName];
         window.$SD.api.setImage(context, image);
-    }
-
-    function defaultSettings(initSettings) {
-        return {
-            value: 0,
-            ...initSettings
-        }
     }
 }

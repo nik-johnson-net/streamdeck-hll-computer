@@ -557,7 +557,7 @@ Utils.getData = function (url) {
         req.onload = function () {
             // This is called even on 404 etc
             // so check the status
-            if (req.status === 200) {
+            if (req.status === 200 || req.status === 0) {
                 // Resolve the promise with the response text
                 resolve(req.response);
             } else {

@@ -3,10 +3,25 @@ function log(msg) {
   window.$SD.api.logMessage(null, {message: msg});
 }
 
-(function () {
-  // Cache all active contexts.
-  let contexts = {}
-  console.log('init hll');
+function loadImages() {
+  const futures = ["zero.svg", "one.svg", "two.svg", "three.svg", "four.svg", "five.svg", "six.svg", "seven.svg", "eight.svg", "nine.svg"].map(name => {
+    return Utils.getData("images/" + name).then(value => {
+      return [name, "data:image/svg+xml;charset=utf8," + value];
+    });
+  });
+  return Promise.all(futures)
+    .then((values) => {
+      return Object.fromEntries(values);
+    })
+    .catch((err) => console.error("error loading images:", err));
+}
+
+function initializePlugin(imageCache) {
+   // Cache all active contexts.
+   let contexts = {};
+
+   // Initialize Computer
+   let computer = new Computer();
 
   // Register all event handlers
   window.$SD.on('willAppear', function(event) {
@@ -15,7 +30,16 @@ function log(msg) {
     if (!contexts.hasOwnProperty(event.context)) {
       switch (event.action) {
         case 'net.nikjohnson.hll-calculator.actionnumberinput':
-          contexts[event.context] = new ActionNumberValue(event.context, {});
+          contexts[event.context] = new ActionNumberValue(event.context, {}, computer, imageCache);
+          break;
+        case 'net.nikjohnson.hll-calculator.actioninputbuffer':
+          contexts[event.context] = new ActionInputBuffer(event.context, {}, computer);
+          break;
+        case 'net.nikjohnson.hll-calculator.actioncomputedvalue':
+          contexts[event.context] = new ActionComputedValue(event.context, {}, computer);
+          break;
+        case 'net.nikjohnson.hll-calculator.actionmodechange':
+          contexts[event.context] = new ActionModeChange(event.context, {}, computer);
           break;
         default:
           log('WARN -- Looks like unknown action', event.action);
@@ -55,7 +79,6 @@ function log(msg) {
   });
 
   window.$SD.on('didReceiveSettings', function(event) {
-    console.log('didReceiveSettings', event);
     if (!contexts.hasOwnProperty(event.context)) {
       log('WARN -- Looks like unknown context ' + event.context + 'got event' + event.event);
       return;
@@ -65,7 +88,6 @@ function log(msg) {
   });
 
   window.$SD.on('sendToPlugin', function(event) {
-    console.log("sendToPlugin", event);
     if (!contexts.hasOwnProperty(event.context)) {
       log('WARN -- Looks like unknown context ' + event.context + 'got event' + event.event);
       return;
@@ -74,4 +96,11 @@ function log(msg) {
     action.onSendToPlugin(event.payload);
   });
   console.log('finish init hll');
+}
+
+(function () {
+  console.log('init hll');
+  loadImages().then((imageCache) => {
+    initializePlugin(imageCache);
+  });
 })();

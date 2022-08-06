@@ -7,13 +7,58 @@
         {
           "Image": "actionDefaultImage",
           "TitleAlignment": "middle",
-          "FontSize": "32",
+          "FontSize": "18",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
       ],
       "Tooltip": "This action enters the number into the distance input",
       "UUID": "net.nikjohnson.hll-calculator.actionNumberInput"
+    },
+    {
+      "Icon": "actionDefaultImage",
+      "Name": "Input Buffer",
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "18",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        }
+      ],
+      "Tooltip": "This action shows the current input buffer",
+      "UUID": "net.nikjohnson.hll-calculator.actionInputBuffer"
+    },
+    {
+      "Icon": "actionDefaultImage",
+      "Name": "Computed Value",
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "18",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        }
+      ],
+      "Tooltip": "This action shows a past computed value",
+      "UUID": "net.nikjohnson.hll-calculator.actionComputedValue"
+    },
+    {
+      "Icon": "actionDefaultImage",
+      "Name": "Mode Change",
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "18",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
+        }
+      ],
+      "Tooltip": "This action changes the computer for different factions",
+      "UUID": "net.nikjohnson.hll-calculator.actionModeChange"
     }
   ],
   "Profiles": [
