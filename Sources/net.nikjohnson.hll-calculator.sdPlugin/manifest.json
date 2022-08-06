@@ -22,7 +22,7 @@
         {
           "Image": "plugin/images/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "10",
+          "FontSize": "16",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
@@ -51,21 +51,21 @@
       "States": [
         {
           "Image": "plugin/images/actionBlack",
-          "Title": "American",
+          "Title": "Mode:\nAmerican",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         },{
           "Image": "plugin/images/actionBlack",
-          "Title": "German",
+          "Title": "Mode:\nGerman",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         },{
           "Image": "plugin/images/actionBlack",
-          "Title": "Russian",
+          "Title": "Mode:\nRussian",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",

@@ -38,12 +38,18 @@ class Computer {
     enter() {
         const computation = {
             meters: this.currentInput,
-            mils: this._computeMeterToMils(this.currentInput)
+            mils: this._computeMeterToMils()
         };
+
+        if (!this._validateRange(computation.mils)) {
+            this.clear();
+            return false;
+        }
 
         this._pushToBuffer(computation);
         this.clear();
         this._updateComputedValueActions();
+        return true;
     }
 
     reset() {
@@ -100,7 +106,7 @@ class Computer {
         }
     }
 
-    _computeMeterToMils(meters) {
+    _computeMeterToMils() {
         // Guns follow a standard linear formula (y=mx+b)
         let m = 0;
         let b = 0;
@@ -116,8 +122,26 @@ class Computer {
                 b = 1141.375;
                 break;
         }
-        const result = (m*meters) + b;
+        const result = (m*this.currentInput) + b;
         return Math.round(result);
+    }
+
+    _validateRange(mils) {
+        let min = 0;
+        let max = 0;
+        switch (this.computerMode) {
+            case "american":
+            case "german":
+                min = 622;
+                max = 978;
+                break;
+            case "russian":
+                min = 800;
+                max = 1120;
+                break;
+        }
+
+        return mils >= min && mils <= max;
     }
 
     _pushToBuffer(computation) {
