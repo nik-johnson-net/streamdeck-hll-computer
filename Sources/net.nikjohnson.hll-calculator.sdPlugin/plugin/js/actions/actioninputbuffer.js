@@ -14,14 +14,14 @@ class ActionInputBuffer extends Action {
     onKeyUp(_) {
         if (this._isHold()) {
             this.computer.clear();
-            window.$SD.api.showAlert(this.context);
+            this.showAlert();
             return;
         }
         
         if (!this.computer.enter()) {
-            window.$SD.api.showAlert(this.context);
+            this.showAlert();
         } else {
-            window.$SD.api.showOk(this.context);
+            this.showOk();
         }
     }
 
@@ -40,6 +40,6 @@ class ActionInputBuffer extends Action {
     }
 
     displayValue(value) {
-        window.$SD.api.setTitle(this.context, '' + value);
+        this.setTitle(value);
     }
 }

@@ -22,7 +22,7 @@ class ActionNumberValue extends Action {
         // Send this button's value to the computer input. If the computer refuses the input,
         // show an alert.
         if (!this.computer.enterDigit(this.settings.value)) {
-            window.$SD.api.showAlert(this.context);
+            this.showAlert();
         };
     }
 

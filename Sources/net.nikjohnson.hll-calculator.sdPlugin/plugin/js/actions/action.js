@@ -11,6 +11,18 @@ class Action {
         return {};
     }
 
+    showOk() {
+        window.$SD.api.showOk(this.context);
+    }
+
+    showAlert() {
+        window.$SD.api.showAlert(this.context);
+    }
+
+    setTitle(title) {
+        window.$SD.api.setTitle(this.context, title);
+    }
+
     onKeyUp(_) {}
     
     onKeyDown(_) {}

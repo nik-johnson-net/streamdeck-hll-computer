@@ -64,6 +64,15 @@ class Computer {
         this._updateInputBufferActions();
     }
 
+    clearSpecificHistory(value) {
+        // Remember values are 1-indexed, arrays are 0-indexed.
+        console.log('computer: clearing specific history', value);
+        if (this.computerHistory[value-1] !== undefined) {
+            this.computerHistory.splice(value-1, 1);
+            this._updateComputedValueActions();
+        }
+    }
+
     deregisterInputBufferAction(action) {
         delete this.inputBufferActions[action.context];
     }

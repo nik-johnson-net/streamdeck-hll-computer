@@ -19,8 +19,13 @@ class ActionComputedValue extends Action {
         this.computer.deregisterComputedValueAction(this);
     }
 
+    onKeyUp(_) {
+        this.computer.clearSpecificHistory(this.settings.historyLevel);
+        this.showOk();
+    }
+
     displayComputation(meters, mils) {
         console.log('Context', this.context, 'displaying computation', meters, mils);
-        window.$SD.api.setTitle(this.context, 'Meters:\n' + meters + '\nMils:\n' + mils);
+        this.setTitle('Meters:\n' + meters + '\nMils:\n' + mils);
     }
 }
