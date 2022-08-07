@@ -77,6 +77,11 @@
     }
   ],
   "Profiles": [
+    {
+      "Name": "assets/hll-computer-0",
+      "DeviceType": 0,
+      "Readonly": false
+    }
   ],
   "SDKVersion": 2,
   "Author": "Nik Johnson",
@@ -101,6 +106,6 @@
   ],
   "Software": 
     {
-        "MinimumVersion" : "4.1"
+        "MinimumVersion" : "4.6"
     }
 }
