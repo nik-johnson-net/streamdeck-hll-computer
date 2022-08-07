@@ -1,7 +1,9 @@
 name: Release
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -21,3 +23,8 @@ jobs:
           Remove-Item Release\*
           mkdir -Force Release
           DistributionToolWindows/DistributionTool.exe -b -i Sources/net.nikjohnson.hll-computer.sdPlugin -o Release
+      - name: Create a Release
+        if: ${{ success() }}
+        shell: pwsh
+        run: |
+          hub release create -d -a "Release/net.nikjohnson.hll-computer.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
