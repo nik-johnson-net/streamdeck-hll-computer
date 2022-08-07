@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Install DistributionTool.exe
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri "https://developer.elgato.com/documentation/stream-deck/distributiontool/DistributionToolWindows.zip" -OutFile "DistributionToolWindows.zip"
+          Expand-Archive "DistributionToolWindows.zip"
+
+      - name: Build Plugin
+        shell: pwsh
+        run: |
+          mkdir -Force Build
+          DistributionToolWindows/DistributionTool.exe -b -i Sources/net.nikjohnson.hll-computer.sdPlugin -o Build
