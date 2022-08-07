@@ -28,16 +28,16 @@ function initializePlugin(imageCache) {
     // If this is a new object, create it and cache it.
     if (!contexts.hasOwnProperty(event.context)) {
       switch (event.action) {
-        case 'net.nikjohnson.hll-calculator.actionnumberinput':
+        case 'net.nikjohnson.hll-computer.actionnumberinput':
           contexts[event.context] = new ActionNumberValue(event.context, {}, computer, imageCache);
           break;
-        case 'net.nikjohnson.hll-calculator.actioninputbuffer':
+        case 'net.nikjohnson.hll-computer.actioninputbuffer':
           contexts[event.context] = new ActionInputBuffer(event.context, {}, computer);
           break;
-        case 'net.nikjohnson.hll-calculator.actioncomputedvalue':
+        case 'net.nikjohnson.hll-computer.actioncomputedvalue':
           contexts[event.context] = new ActionComputedValue(event.context, {}, computer);
           break;
-        case 'net.nikjohnson.hll-calculator.actionmodechange':
+        case 'net.nikjohnson.hll-computer.actionmodechange':
           contexts[event.context] = new ActionModeChange(event.context, {}, computer);
           break;
         default:

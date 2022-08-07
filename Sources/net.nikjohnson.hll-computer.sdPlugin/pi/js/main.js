@@ -21,7 +21,7 @@ function renderActionTemplate(name, selectedOption) {
 }
 
 var actions = {
-  "net.nikjohnson.hll-calculator.actionnumberinput": {
+  "net.nikjohnson.hll-computer.actionnumberinput": {
     register(uuid, settings) {
       renderActionTemplate("actionnumberinput", settings.value);
 
@@ -31,7 +31,7 @@ var actions = {
       };
     }
   },
-  "net.nikjohnson.hll-calculator.actioncomputedvalue": {
+  "net.nikjohnson.hll-computer.actioncomputedvalue": {
     register(uuid, settings) {
       renderActionTemplate("actioncomputedvalue", settings.historyLevel);
 

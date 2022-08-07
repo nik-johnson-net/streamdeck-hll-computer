@@ -13,7 +13,7 @@
         }
       ],
       "Tooltip": "This action enters the number into the distance input",
-      "UUID": "net.nikjohnson.hll-calculator.actionNumberInput"
+      "UUID": "net.nikjohnson.hll-computer.actionNumberInput"
     },
     {
       "Icon": "assets/login",
@@ -28,7 +28,7 @@
         }
       ],
       "Tooltip": "This action shows the current input buffer",
-      "UUID": "net.nikjohnson.hll-calculator.actionInputBuffer"
+      "UUID": "net.nikjohnson.hll-computer.actionInputBuffer"
     },
     {
       "Icon": "assets/log-out",
@@ -43,7 +43,7 @@
         }
       ],
       "Tooltip": "This action shows a past computed value",
-      "UUID": "net.nikjohnson.hll-calculator.actionComputedValue"
+      "UUID": "net.nikjohnson.hll-computer.actionComputedValue"
     },
     {
       "Icon": "assets/cycle",
@@ -73,7 +73,7 @@
         }
       ],
       "Tooltip": "This action changes the computer for different factions",
-      "UUID": "net.nikjohnson.hll-calculator.actionModeChange"
+      "UUID": "net.nikjohnson.hll-computer.actionModeChange"
     }
   ],
   "Profiles": [
@@ -93,7 +93,7 @@
   "Icon": "assets/hll-computer-icon",
   "URL": "https://www.elgato.com/gaming/stream-deck",
   "PropertyInspectorPath": "pi/index.html",
-  "Version": "0.1",
+  "Version": "0.2",
   "OS": [
     {
       "Platform": "mac",
