@@ -1,33 +1,36 @@
 class ActionInputBuffer extends Action {
-    static millisHoldTime = 500;
+    static millisHoldTime = 333;
 
     constructor(context, settings, computer) {
         super(context, settings)
         this.computer = computer;
-        this.holdStartTime = 0;
+        this.holdCancelSignal = null;
+        this.holdRan = false;
     }
 
     onKeyDown(_) {
         this.holdStartTime = Date.now();
+        this.holdCancelSignal = this._startHold();
+        this.holdRan = false;
     }
 
     onKeyUp(_) {
-        if (this._isHold()) {
-            this.computer.clear();
-            this.showAlert();
+        if (this.holdRan) {
+            console.log('ActionInputBuffer: onKeyUp: hold already ran.');
+            this.holdRan = false;
             return;
         }
-        
+        console.log('ActionInputBuffer: onKeyUp: hold didn\'t run.');
+        this.holdRan = false;
+
+        this.holdCancelSignal();
+        this.holdCancelSignal = null;
+
         if (!this.computer.enter()) {
             this.showAlert();
         } else {
             this.showOk();
         }
-    }
-
-    _isHold() {
-        const elapsed = Date.now() - this.holdStartTime;
-        return elapsed >= ActionInputBuffer.millisHoldTime;
     }
 
     onWillAppear(payload) {
@@ -41,5 +44,24 @@ class ActionInputBuffer extends Action {
 
     displayValue(value) {
         this.setTitle(value);
+    }
+
+    _startHold() {
+        console.log('ActionInputBuffer: Starting hold');
+        let shouldCancel = false;
+        setTimeout(() => {
+            console.log('ActionInputBuffer: hold function evaluation');
+            if (!shouldCancel) {
+                console.log('ActionInputBuffer: hold function not cancelled');
+                this.holdRan = true;
+                this.computer.clear();
+                this.showAlert();
+            } else {
+                console.log('ActionInputBuffer: hold function cancelled');
+            }
+        }, ActionInputBuffer.millisHoldTime);
+        return () => {
+            shouldCancel = true;
+        };
     }
 }
