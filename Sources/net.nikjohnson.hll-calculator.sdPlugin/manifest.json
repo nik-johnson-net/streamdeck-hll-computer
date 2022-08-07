@@ -1,11 +1,11 @@
 {
   "Actions": [
     {
-      "Icon": "actionDefaultImage",
+      "Icon": "assets/new-message",
       "Name": "Number Input",
       "States": [
         {
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",
@@ -16,13 +16,13 @@
       "UUID": "net.nikjohnson.hll-calculator.actionNumberInput"
     },
     {
-      "Icon": "actionDefaultImage",
+      "Icon": "assets/login",
       "Name": "Input Buffer",
       "States": [
         {
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "TitleAlignment": "middle",
-          "FontSize": "16",
+          "FontSize": "18",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         }
@@ -31,11 +31,11 @@
       "UUID": "net.nikjohnson.hll-calculator.actionInputBuffer"
     },
     {
-      "Icon": "actionDefaultImage",
+      "Icon": "assets/log-out",
       "Name": "Computed Value",
       "States": [
         {
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "TitleAlignment": "middle",
           "FontSize": "12",
           "FontFamily": "Courier",
@@ -46,25 +46,25 @@
       "UUID": "net.nikjohnson.hll-calculator.actionComputedValue"
     },
     {
-      "Icon": "actionDefaultImage",
+      "Icon": "assets/cycle",
       "Name": "Mode Change",
       "States": [
         {
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "Title": "Mode:\nAmerican",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         },{
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "Title": "Mode:\nGerman",
           "TitleAlignment": "middle",
           "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
         },{
-          "Image": "plugin/images/actionBlack",
+          "Image": "assets/actionBlack",
           "Title": "Mode:\nRussian",
           "TitleAlignment": "middle",
           "FontSize": "10",
@@ -81,10 +81,11 @@
   "SDKVersion": 2,
   "Author": "Nik Johnson",
   "Category": "HLL Calculator",
+  "CategoryIcon": "assets/hell-let-loose",
   "CodePath": "plugin/index.html",
   "Description": "Hell Let Loose artillery distance calculator",
   "Name": "Hell Let Loose Artillery Calculator",
-  "Icon": "pluginIcon",
+  "Icon": "assets/hll-computer-icon",
   "URL": "https://www.elgato.com/gaming/stream-deck",
   "PropertyInspectorPath": "pi/index.html",
   "Version": "0.1",
