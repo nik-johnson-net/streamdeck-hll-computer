@@ -26,12 +26,12 @@ class Computer {
     }
 
     enterDigit(value) {
-        if (this.currentDigits >= Computer.maxDigits) {
-            return false;
-        }
         this.currentDigits += 1;
         this.currentInput = (this.currentInput * 10) + value;
         this._updateInputBufferActions();
+        if (this.currentDigits >= Computer.maxDigits) {
+            return this.enter();
+        }
         return true;
     }
 
