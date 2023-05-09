@@ -81,6 +81,11 @@
       "Name": "assets/hll-computer-0",
       "DeviceType": 0,
       "Readonly": false
+    },
+    {
+      "Name": "assets/hll-computer-xl",
+      "DeviceType": 2,
+      "Readonly": false
     }
   ],
   "SDKVersion": 2,
