@@ -10,7 +10,24 @@ To install this plugin, simply download and open the `Release/net.nikjohnson.hll
 
 The plugin comes with a prebuilt profile for the original Stream Deck. Or create your own using the four available actions.
 
-## Available Actions
+## Usage
+
+![example](assets/base.png "Example image of profile")
+
+The plugin works by providing a numeric keypad interface which are used to punch in the distance in meters. Upon entering a fourth digit, or
+pressing the "Input Buffer" action, the computer converts the distance to mils and stores it in the "Computed Value" action. There can be
+multiple "Computed Value" actions, allowing you to quickly refer back to a past calculation.
+
+If an incorrect distance is entered (too short, or too far), the last numkey pressed or input buffer action will display a yellow triangle.
+
+Entered an incorrect distance and want to clear it? Simple press the "Computed Value" action it was stored into.
+
+Hit the wrong digit and want to clear the input buffer? Simply press and hold the "Input Buffer" action.
+
+Finally, the Russian guns use a different distance convertion than U.S. or German guns, so use the "Mode Change" action to switch settings. Mode
+changes will reset current input and past calculations.
+
+## Actions
 
 The plugin is designed to function as a full screen application on the Stream Deck. The various actions work together to build an
 intuitive interface for artillery calculations.
