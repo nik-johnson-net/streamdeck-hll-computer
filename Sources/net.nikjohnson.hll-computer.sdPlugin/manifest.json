@@ -70,6 +70,14 @@
           "FontSize": "10",
           "FontFamily": "Courier",
           "FontStyle": "Bold"
+        },
+        {
+          "Image": "assets/actionBlack",
+          "Title": "Mode:\nBritish",
+          "TitleAlignment": "middle",
+          "FontSize": "10",
+          "FontFamily": "Courier",
+          "FontStyle": "Bold"
         }
       ],
       "Tooltip": "This action changes the computer for different factions",

@@ -1,5 +1,5 @@
 class Computer {
-    static acceptedModes = ["american", "german", "russian"];
+    static acceptedModes = ["american", "german", "russian", "british"];
     static computerMaxHistory = 5;
     static maxDigits = 4;
 
@@ -130,6 +130,9 @@ class Computer {
                 m = -0.2133823529;
                 b = 1141.375;
                 break;
+            case "british":
+                m = -0.1774;
+                b = 550.8;
         }
         const result = (m*this.currentInput) + b;
         return Math.round(result);
@@ -147,6 +150,10 @@ class Computer {
             case "russian":
                 min = 800;
                 max = 1120;
+                break;
+            case "british":
+                min = 267;
+                max = 533;
                 break;
         }
 
