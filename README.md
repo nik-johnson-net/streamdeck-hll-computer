@@ -12,7 +12,7 @@ The plugin comes with a prebuilt profile for the original Stream Deck. Or create
 
 ## Usage
 
-![example](assets/base.png "Example image of profile")
+![hll-computer-demo](https://github.com/user-attachments/assets/7672fcd7-6d69-4352-a920-19c90e731451)
 
 The plugin works by providing a numeric keypad interface which are used to punch in the distance in meters. Upon entering a fourth digit, or
 pressing the "Input Buffer" action, the computer converts the distance to mils and stores it in the "Computed Value" action. There can be
