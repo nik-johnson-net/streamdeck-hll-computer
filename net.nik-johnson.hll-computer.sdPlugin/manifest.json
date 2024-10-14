@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
 	"Name": "Hell Let Loose Artillery Calculator",
-	"Version": "0.4.1.0",
+	"Version": "0.4.2.0",
 	"Author": "Nik Johnson",
 	"Actions": [
 		{
