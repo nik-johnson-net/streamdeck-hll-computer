@@ -43,4 +43,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          hub release create -d -a "net.nik-johnson.hll-computer.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
+          gh release create "${{ github.ref_name }}" "net.nik-johnson.hll-computer.streamDeckPlugin" --draft --generate-notes
