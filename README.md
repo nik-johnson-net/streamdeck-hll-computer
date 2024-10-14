@@ -6,7 +6,7 @@ and see your previous calculations for rapid target adjustment.
 
 ## Installation
 
-To install this plugin, simply download and open the `Release/net.nikjohnson.hll-computer.streamDeckPlugin` file in Stream Deck.
+To install this plugin, simply download and open the latest streamDeckPlugin file from the [Releases Page](https://github.com/nik-johnson-net/streamdeck-hll-computer/releases) and open it in Stream Deck.
 
 The plugin comes with a prebuilt profile for the original Stream Deck. Or create your own using the four available actions.
 
