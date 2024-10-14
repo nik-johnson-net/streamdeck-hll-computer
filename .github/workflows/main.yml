@@ -25,6 +25,11 @@ jobs:
         run: |
           npm install -g @elgato/cli
 
+      # Install dependencies
+      - name: npm install
+        run: |
+          npm install
+
       # Build the plugin
       - name: Build the plugin
         run: |
