@@ -28,4 +28,4 @@ jobs:
       # Run default validations
       - name: Validate Plugin
         run: |
-          streamdeck validate net.nik-johnson.hell-let-loose-artillery-calculator.sdPlugin
+          streamdeck validate net.nik-johnson.hll-computer.sdPlugin

@@ -17,7 +17,7 @@ const _valueToImage = {
 /**
  * Shows an input key for one digit.
  */
-@action({ UUID: "net.nik-johnson.hell-let-loose-artillery-calculator.number-input" })
+@action({ UUID: "net.nik-johnson.hll-computer.number-input" })
 export class NumberInput extends SingletonAction<NumberInputSettings> {
 	private computer: Computer;
 	

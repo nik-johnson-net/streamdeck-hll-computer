@@ -4,7 +4,7 @@ import { Computer, Modes } from "../computer";
 /**
  * Shows a computed value.
  */
-@action({ UUID: "net.nik-johnson.hell-let-loose-artillery-calculator.mode-change" })
+@action({ UUID: "net.nik-johnson.hll-computer.mode-change" })
 export class ModeChange extends SingletonAction<ModeChangeSettings> {
 	private computer: Computer;
 	

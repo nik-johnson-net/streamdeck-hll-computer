@@ -4,7 +4,7 @@ import { Computer } from "../computer";
 /**
  * Shows a computed value.
  */
-@action({ UUID: "net.nik-johnson.hell-let-loose-artillery-calculator.computed-value" })
+@action({ UUID: "net.nik-johnson.hll-computer.computed-value" })
 export class ComputedValue extends SingletonAction<ComputedValueSettings> {
 	private computer: Computer;
 	

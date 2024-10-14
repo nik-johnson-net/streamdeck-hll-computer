@@ -6,7 +6,7 @@ import path from "node:path";
 import url from "node:url";
 
 const isWatching = !!process.env.ROLLUP_WATCH;
-const sdPlugin = "net.nik-johnson.hell-let-loose-artillery-calculator.sdPlugin";
+const sdPlugin = "net.nik-johnson.hll-computer.sdPlugin";
 
 /**
  * @type {import('rollup').RollupOptions}

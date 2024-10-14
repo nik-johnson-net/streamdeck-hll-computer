@@ -5,7 +5,7 @@ import { ButtonHold } from "../buttonHold";
 /**
  * Shows a computed value.
  */
-@action({ UUID: "net.nik-johnson.hell-let-loose-artillery-calculator.input-buffer" })
+@action({ UUID: "net.nik-johnson.hll-computer.input-buffer" })
 export class InputBuffer extends SingletonAction<InputBufferSettings> {
 	private computer: Computer;
 	private hold: ButtonHold<InputBufferSettings>;

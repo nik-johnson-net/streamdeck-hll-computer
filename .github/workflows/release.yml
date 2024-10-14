@@ -25,7 +25,7 @@ jobs:
       # Run default validations
       - name: Pack Plugin
         run: |
-          streamdeck pack net.nik-johnson.hell-let-loose-artillery-calculator.sdPlugin
+          streamdeck pack net.nik-johnson.hll-computer.sdPlugin
 
       - name: Create a Release
         if: ${{ success() }}
@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          hub release create -d -a "net.nik-johnson.hell-let-loose-artillery-calculator.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
+          hub release create -d -a "net.nik-johnson.hll-computer.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
