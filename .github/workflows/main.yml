@@ -15,14 +15,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Install DistributionTool.exe
-        shell: pwsh
-        run: |
-          Invoke-WebRequest -Uri "https://developer.elgato.com/documentation/stream-deck/distributiontool/DistributionToolWindows.zip" -OutFile "DistributionToolWindows.zip"
-          Expand-Archive "DistributionToolWindows.zip"
+      # Install Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Build Plugin
-        shell: pwsh
+      # Install the streamdeck CLI
+      - name: Install streamdeck-cli
         run: |
-          mkdir -Force Build
-          DistributionToolWindows/DistributionTool.exe -b -i Sources/net.nikjohnson.hll-computer.sdPlugin -o Build
+          npm install -g @elgato/cli
+
+      # Run default validations
+      - name: Validate Plugin
+        run: |
+          streamdeck validate net.nik-johnson.hell-let-loose-artillery-calculator.sdPlugin
