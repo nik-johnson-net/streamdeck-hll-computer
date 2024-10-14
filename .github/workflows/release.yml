@@ -12,21 +12,35 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Install DistributionTool.exe
-        shell: pwsh
+      # Install Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install the streamdeck CLI
+      - name: Install streamdeck-cli
         run: |
-          Invoke-WebRequest -Uri "https://developer.elgato.com/documentation/stream-deck/distributiontool/DistributionToolWindows.zip" -OutFile "DistributionToolWindows.zip"
-          Expand-Archive "DistributionToolWindows.zip"
-      - name: Build Plugin
-        shell: pwsh
+          npm install -g @elgato/cli
+
+      # Install dependencies
+      - name: npm install
         run: |
-          Remove-Item Release\*
-          mkdir -Force Release
-          DistributionToolWindows/DistributionTool.exe -b -i Sources/net.nikjohnson.hll-computer.sdPlugin -o Release
+          npm install
+
+      # Build the plugin
+      - name: Build the plugin
+        run: |
+          npm run build
+
+      # Run default validations
+      - name: Pack Plugin
+        run: |
+          streamdeck pack net.nik-johnson.hll-computer.sdPlugin
+
       - name: Create a Release
         if: ${{ success() }}
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          hub release create -d -a "Release/net.nikjohnson.hll-computer.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
+          hub release create -d -a "net.nik-johnson.hll-computer.streamDeckPlugin" -m "${{ github.ref_name }}" "${{ github.ref }}"
