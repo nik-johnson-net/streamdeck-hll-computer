@@ -52,4 +52,10 @@ export class InputBuffer extends SingletonAction<InputBufferSettings> {
 	}
 }
 
+/**
+ * Re-export under an old name
+ */
+@action({ UUID: "net.nik-johnson.hll-computer.actioninputbuffer" })
+export class ActionInputBuffer extends InputBuffer {}
+
 export type InputBufferSettings = {};

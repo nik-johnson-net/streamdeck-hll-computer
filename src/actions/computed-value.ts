@@ -36,6 +36,12 @@ export class ComputedValue extends SingletonAction<ComputedValueSettings> {
 }
 
 /**
+ * Re-export under an old name
+ */
+@action({ UUID: "net.nik-johnson.hll-computer.actioncomputedvalue" })
+export class ActionComputedValue extends ComputedValue {}
+
+/**
  * Settings for {@link IncrementCounter}.
  */
 export type ComputedValueSettings = {

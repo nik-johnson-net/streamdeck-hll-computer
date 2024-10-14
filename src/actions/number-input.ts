@@ -49,6 +49,12 @@ export class NumberInput extends SingletonAction<NumberInputSettings> {
 }
 
 /**
+ * Re-export under an old name
+ */
+@action({ UUID: "net.nik-johnson.hll-computer.actionnumberinput" })
+export class ActionNumberInput extends NumberInput {}
+
+/**
  * Settings for {@link IncrementCounter}.
  */
 export type NumberInputSettings = {

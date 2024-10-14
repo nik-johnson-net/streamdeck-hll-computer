@@ -24,6 +24,12 @@ export class ModeChange extends SingletonAction<ModeChangeSettings> {
 }
 
 /**
+ * Re-export under an old name
+ */
+@action({ UUID: "net.nik-johnson.hll-computer.actionmodechange" })
+export class ActionModeChange extends ModeChange {}
+
+/**
  * Settings for {@link IncrementCounter}.
  */
 export type ModeChangeSettings = {};

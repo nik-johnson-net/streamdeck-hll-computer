@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
 	"Name": "Hell Let Loose Artillery Calculator",
-	"Version": "1.0.0.0",
+	"Version": "0.4.0.0",
 	"Author": "Nik Johnson",
 	"Actions": [
 		{
@@ -21,7 +21,29 @@
 				}
 			],
 			"Tooltip": "This action enters the number into the distance input",
+			"UserTitleEnabled": false,
 			"UUID": "net.nik-johnson.hll-computer.number-input"
+		},
+		{
+			"Controllers": [
+				"Keypad"
+			],
+			"Icon": "imgs/actions/new-message",
+			"Name": "Number Input (Deprecated)",
+			"PropertyInspectorPath": "ui/number-input.html",
+			"States": [
+				{
+					"Image": "imgs/actions/black",
+					"TitleAlignment": "middle",
+					"FontSize": 10,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				}
+			],
+			"Tooltip": "This action enters the number into the distance input. This action is deprecated, replace with the new Number Input!",
+			"UserTitleEnabled": false,
+			"UUID": "net.nik-johnson.hll-computer.actionnumberinput",
+			"VisibleInActionsList": false
 		},
 		{
 			"Controllers": [
@@ -39,7 +61,28 @@
 				}
 			],
 			"Tooltip": "This action shows the current input buffer",
+			"UserTitleEnabled": false,
 			"UUID": "net.nik-johnson.hll-computer.input-buffer"
+		},
+		{
+			"Controllers": [
+				"Keypad"
+			],
+			"Icon": "imgs/actions/login",
+			"Name": "Input Buffer (Deprecated)",
+			"States": [
+				{
+					"Image": "imgs/actions/black",
+					"TitleAlignment": "middle",
+					"FontSize": 18,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				}
+			],
+			"Tooltip": "This action shows the current input buffer. This action is deprecated, replace with the new Input Buffer!",
+			"UserTitleEnabled": false,
+			"UUID": "net.nik-johnson.hll-computer.actioninputbuffer",
+			"VisibleInActionsList": false
 		},
 		{
 			"Controllers": [
@@ -58,7 +101,29 @@
 				}
 			],
 			"Tooltip": "This action shows a past computed value",
+			"UserTitleEnabled": false,
 			"UUID": "net.nik-johnson.hll-computer.computed-value"
+		},
+		{
+			"Controllers": [
+				"Keypad"
+			],
+			"Icon": "imgs/actions/log-out",
+			"Name": "Computed Value (Deprecated)",
+			"PropertyInspectorPath": "ui/computed-value.html",
+			"States": [
+				{
+					"Image": "imgs/actions/black",
+					"TitleAlignment": "middle",
+					"FontSize": 12,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				}
+			],
+			"Tooltip": "This action shows a past computed value. This action is deprecated, replace with the new Computed Value!",
+			"UserTitleEnabled": false,
+			"UUID": "net.nik-johnson.hll-computer.actioncomputedvalue",
+			"VisibleInActionsList": false
 		},
 		{
 			"Controllers": [
@@ -101,7 +166,53 @@
 				}
 			],
 			"Tooltip": "This action changes the computer for different factions",
+			"UserTitleEnabled": false,
 			"UUID": "net.nik-johnson.hll-computer.mode-change"
+		},
+		{
+			"Controllers": [
+				"Keypad"
+			],
+			"Icon": "imgs/actions/cycle",
+			"Name": "Mode Change",
+			"States": [
+				{
+					"Image": "imgs/actions/black",
+					"Title": "Mode:\nAmerican",
+					"TitleAlignment": "middle",
+					"FontSize": 10,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				},
+				{
+					"Image": "imgs/actions/black",
+					"Title": "Mode:\nGerman",
+					"TitleAlignment": "middle",
+					"FontSize": 10,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				},
+				{
+					"Image": "imgs/actions/black",
+					"Title": "Mode:\nRussian",
+					"TitleAlignment": "middle",
+					"FontSize": 10,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				},
+				{
+					"Image": "imgs/actions/black",
+					"Title": "Mode:\nBritish",
+					"TitleAlignment": "middle",
+					"FontSize": 10,
+					"FontFamily": "Courier",
+					"FontStyle": "Bold"
+				}
+			],
+			"Tooltip": "This action changes the computer for different factions. This action is deprecated, replace with the new Mode Change!",
+			"UserTitleEnabled": false,
+			"UUID": "net.nik-johnson.hll-computer.actionmodechange",
+			"VisibleInActionsList": false
 		}
 	],
 	"Category": "Hell Let Loose Artillery Calculator",
